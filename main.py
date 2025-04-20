@@ -7,7 +7,7 @@ import cv2
 app = FastAPI()
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
-model = YOLO("model.pt")  # replace with your actual model path
+model = YOLO("model.pt")
 
 @app.post("/predict")
 async def predict(image: UploadFile = File(...)):
